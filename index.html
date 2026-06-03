@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CEAK Verde – Troque, Reutilize e Preserve</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .organic-shape {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed": "#002114",
+                      "on-primary-fixed-variant": "#0e5138",
+                      "surface-container": "#edeeef",
+                      "on-background": "#191c1d",
+                      "secondary-fixed-dim": "#e9be9e",
+                      "on-error": "#ffffff",
+                      "surface-tint": "#2c694e",
+                      "inverse-surface": "#2e3132",
+                      "secondary": "#78583e",
+                      "secondary-fixed": "#ffdcc2",
+                      "tertiary-fixed": "#d6eb9e",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-surface-variant": "#404943",
+                      "outline": "#707973",
+                      "primary": "#0f5238",
+                      "secondary-container": "#fdd2b1",
+                      "primary-fixed": "#b1f0ce",
+                      "on-primary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "surface-dim": "#d9dadb",
+                      "surface-variant": "#e1e3e4",
+                      "surface-container-low": "#f3f4f5",
+                      "surface": "#f8f9fa",
+                      "on-tertiary-fixed-variant": "#3c4c10",
+                      "surface-bright": "#f8f9fa",
+                      "error": "#ba1a1a",
+                      "primary-fixed-dim": "#95d4b3",
+                      "outline-variant": "#bfc9c1",
+                      "on-surface": "#191c1d",
+                      "on-secondary-container": "#79583e",
+                      "inverse-primary": "#95d4b3",
+                      "on-error-container": "#93000a",
+                      "tertiary": "#3d4d11",
+                      "on-secondary-fixed": "#2c1603",
+                      "surface-container-highest": "#e1e3e4",
+                      "surface-container-high": "#e7e8e9",
+                      "primary-container": "#2d6a4f",
+                      "on-secondary-fixed-variant": "#5e4028",
+                      "on-primary-container": "#a8e7c5",
+                      "on-tertiary-container": "#cde295",
+                      "on-tertiary-fixed": "#151f00",
+                      "tertiary-fixed-dim": "#bacf84",
+                      "inverse-on-surface": "#f0f1f2",
+                      "tertiary-container": "#546527",
+                      "background": "#f8f9fa"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "24px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "sm": "12px",
+                      "xs": "4px",
+                      "base": "8px",
+                      "lg": "48px",
+                      "xl": "80px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "title-sm": ["Plus Jakarta Sans"],
+                      "headline-md-mobile": ["Plus Jakarta Sans"],
+                      "display-lg-mobile": ["Plus Jakarta Sans"],
+                      "body-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "display-lg": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "title-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "headline-md-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Shared TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm shadow-primary/5">
+<nav class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" style="font-size: 28px;">eco</span>
+<span class="font-headline-md-mobile text-headline-md-mobile tracking-tight text-primary dark:text-primary-fixed">CEAK Verde</span>
+</div>
+<button aria-label="Menu" class="active:scale-95 transition-transform duration-200 text-on-surface-variant dark:text-outline-variant hover:text-primary-container dark:hover:text-on-primary-container">
+<span class="material-symbols-outlined" style="font-size: 32px;">menu</span>
+</button>
+</nav>
+</header>
+<main class="mt-16">
+<!-- Hero Section -->
+<section class="relative h-[751px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A panoramic view of lush rolling green hills and sustainably managed farm fields under a clear morning sun. The lighting is soft and natural, emphasizing the vibrant shades of emerald and sage green. In the foreground, a few native trees stand as silhouettes against the bright horizon, creating a peaceful and hopeful eco-friendly atmosphere consistent with a clean modern UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0TrfxJEe7pGG5ZFNAl4e5iHHZzBLpEwgLl77zTIQDHXmmScaNLI6zaf0NysxUVD-ozvl3FjOR85Tuwy3w4_cTIAwa9wS_5nAv1XxRB4hjstsZJgVy2ydl6I8BVYBOWDA3GnwkkQP_exIzep8t0iTkKwssOLxrFqxcfpAGyGyGc5IOSKwTYyX6dZnfVn0K6m0JKZILSqk8NpCwECt_A-DSWKZ6c7qEhQZA_Pj8hhFNpDYvBr0WxhRw0OxV0u0kPkNbvGikx9LsAcjQ"/>
+<div class="absolute inset-0 bg-primary/30 backdrop-brightness-75 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile max-w-4xl">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-white mb-base drop-shadow-lg md:font-display-lg md:text-display-lg">
+                    CEAK Verde – Troque, Reutilize e Preserve
+                </h1>
+<p class="font-body-lg text-white/90 mb-lg max-w-xl mx-auto">
+                    Reutilizar é cuidar do planeta e das pessoas. Faça parte da nossa rede de stewardship comunitária.
+                </p>
+<div class="flex flex-col sm:flex-row gap-base justify-center">
+<button class="bg-primary text-white px-lg py-sm rounded-lg font-label-sm hover:brightness-110 active:scale-95 transition-all shadow-lg">
+                        Começar Agora
+                    </button>
+<button class="bg-white/20 backdrop-blur-md border border-white/30 text-white px-lg py-sm rounded-lg font-label-sm hover:bg-white/30 active:scale-95 transition-all">
+                        Saiba Mais
+                    </button>
+</div>
+</div>
+<!-- Bottom organic curve mask -->
+<div class="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-[0]">
+<svg class="relative block w-[calc(130%+1.3px)] h-20 fill-background transform translate-x-[-15%]" preserveaspectratio="none" viewbox="0 0 1200 120">
+<path d="M37.5,94.7c112.5-16.1,180.9,43.2,300,53.2c119.1,10,233.1-40.3,375.3-26.6c142.2,13.7,236.7,113.1,387.2,50.1 V120H0V94.7z"></path>
+</svg>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-xl px-margin-mobile max-w-7xl mx-auto scroll-reveal">
+<div class="grid md:grid-cols-2 gap-xl items-center">
+<div class="relative">
+<div class="organic-shape bg-primary-fixed w-full aspect-square absolute -top-8 -left-8 -z-10 opacity-30 animate-pulse"></div>
+<img class="rounded-xl shadow-xl w-full h-[400px] object-cover" data-alt="A group of diverse community volunteers of all ages working together in an urban garden. They are laughing and interacting warmly under a bright afternoon sky. The image captures hands planting young green seedlings into rich dark soil, symbolizing education and social responsibility. The lighting is bright and airy, reflecting a professional yet vibrant educational brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqMgyVEHyZ8V4jzOslzVRrGCgNZdQwbeY6kR2xwJT52Dl5UjEgwM5uU4eXDBwUOhB5F1Wyit2MWpH9yagI7GgBdwm2nPqIO70DwMjYtL1M0iKL6fNWVNAGCqSW8m7uoPbLkGdQj5zsrAvjIK-PGiGXrkIA6nNFoAUDDJjlqkR0KWqbLzbqcLAr5KyoBWff5EL916KxmmbT5vVlAuNgNvQsg1cQVwjXAKnyfo1wnHED8Bqcaf-Y6PSkfuuqHCIUOprDR1jepBZlSUN-"/>
+</div>
+<div>
+<span class="text-primary font-label-sm uppercase tracking-widest mb-base block">Nossa Essência</span>
+<h2 class="font-headline-md-mobile text-headline-md-mobile mb-md text-on-surface md:font-headline-md md:text-headline-md">Sustentabilidade através da Educação</h2>
+<p class="font-body-md text-on-surface-variant mb-md leading-relaxed">
+                        No CEAK Verde, acreditamos que a preservação do meio ambiente começa com a mudança de hábitos diários. Somos uma plataforma que integra educação ambiental e responsabilidade social, conectando a comunidade através da economia circular.
+                    </p>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                        Transformamos o que seria descartado em novas oportunidades de vida, fortalecendo o vínculo entre as pessoas e a terra.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Donation Section (O que pode ser doado?) -->
+<section class="py-xl bg-surface-container-low px-margin-mobile">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-xl scroll-reveal">
+<h2 class="font-headline-md-mobile text-headline-md-mobile mb-base md:font-headline-md md:text-headline-md">O que pode ser doado?</h2>
+<div class="w-24 h-1.5 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-md scroll-reveal">
+<!-- Books -->
+<div class="bg-white p-md rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-12 h-12 bg-primary-fixed rounded-lg flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-[28px]">menu_book</span>
+</div>
+<h3 class="font-title-sm text-title-sm-mobile mb-xs">Livros &amp; Didáticos</h3>
+<p class="text-on-surface-variant font-label-sm">Conhecimento que circula e educa.</p>
+</div>
+<!-- Toys -->
+<div class="bg-white p-md rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-12 h-12 bg-secondary-fixed rounded-lg flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary text-[28px]">smart_toy</span>
+</div>
+<h3 class="font-title-sm text-title-sm-mobile mb-xs">Brinquedos</h3>
+<p class="text-on-surface-variant font-label-sm">Transforme a brincadeira de uma criança.</p>
+</div>
+<!-- Clothes -->
+<div class="bg-white p-md rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-12 h-12 bg-tertiary-fixed rounded-lg flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-[28px]">checkroom</span>
+</div>
+<h3 class="font-title-sm text-title-sm-mobile mb-xs">Roupas &amp; Calçados</h3>
+<p class="text-on-surface-variant font-label-sm">Moda circular e consciente.</p>
+</div>
+<!-- School Supplies -->
+<div class="bg-white p-md rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-12 h-12 bg-primary-fixed rounded-lg flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-[28px]">backpack</span>
+</div>
+<h3 class="font-title-sm text-title-sm-mobile mb-xs">Escolares</h3>
+<p class="text-on-surface-variant font-label-sm">Mochilas e materiais básicos.</p>
+</div>
+<!-- Electronics -->
+<div class="bg-white p-md rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-12 h-12 bg-secondary-fixed rounded-lg flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary text-[28px]">devices</span>
+</div>
+<h3 class="font-title-sm text-title-sm-mobile mb-xs">Eletrônicos</h3>
+<p class="text-on-surface-variant font-label-sm">Gadgets em bom estado para reuso.</p>
+</div>
+<!-- Household -->
+<div class="bg-white p-md rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-12 h-12 bg-tertiary-fixed rounded-lg flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-[28px]">home_repair_service</span>
+</div>
+<h3 class="font-title-sm text-title-sm-mobile mb-xs">Objetos Casa</h3>
+<p class="text-on-surface-variant font-label-sm">Utilidades domésticas essenciais.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Received Section (O que pode ser recebido?) -->
+<section class="py-xl px-margin-mobile max-w-7xl mx-auto">
+<div class="text-center mb-xl scroll-reveal">
+<h2 class="font-headline-md-mobile text-headline-md-mobile mb-base md:font-headline-md md:text-headline-md">O que pode ser recebido?</h2>
+<p class="font-body-md text-on-surface-variant">Sua doação gera créditos para produtos sustentáveis</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-md scroll-reveal">
+<!-- Seedlings -->
+<div class="relative overflow-hidden rounded-xl h-64 group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Close-up of small vibrant green plant seedlings growing in biodegradable pots on a wooden table. The sunlight filters through fresh green leaves, creating a bright and optimistic mood. The aesthetic is clean, organic, and earth-focused, using high-key lighting and natural textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASsgFPN7XJ8v6GFeNR0bvZDXIN3LQoBYZIITf2D0a3LKHWpedVRExB2YHp77gjOLx5rAdkNfUHHB8jLfablMcVm6dD3kD2xOMZIgunB0anHEjQZkQkp2bRKVoKaSiuWvHa1fZMFYBzJjqWJ3Oov_XfveeR_HLMkpa66uZ4DeJQQev8aIIngHB7Ht0_eYpQRaLE9lDlct_EUjtG-yD3uKkkg-jvOaX6RyvUK89GVUA5nbqiPAF2QKx5GotWvIQN2X3YcQnNj2_BJr0Z"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-md">
+<span class="material-symbols-outlined text-primary-fixed mb-xs">psychology_alt</span>
+<h3 class="text-white font-title-sm">Mudas de Plantas</h3>
+<p class="text-white/80 font-label-sm">Nativas e ornamentais</p>
+</div>
+</div>
+<!-- Vegetables -->
+<div class="relative overflow-hidden rounded-xl h-64 group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A beautiful assortment of fresh organic vegetables including vibrant red tomatoes, leafy greens, and bright orange carrots displayed in a rustic wooden crate. The lighting is warm and golden, highlighting the fresh textures and dew drops on the produce. The style is modern organic, evoking community-field connections and healthy stewardship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQbtT1CZyK8rieCpK3U8dbYn2JLXoyV9Poy_isYg8bBQSWJjQAsdH_IMEVurZOMPn2BCmoT4nGc1l02feTJLN8pgCWaARWsVYwlWSioChj-9_7EBrwwK8HObzcPKKdxifzhMLiJRdYTQlpGBDckK2FlO4eQfb0X5yMZi_ZFG2jhn2d4yPekmnuzgQS2ZSoclbOEB2kPtWp1i0kiZj2lq-_M2dmpeN0isaaaRkXBEbzjxaLvQNmvRvNERDSjszTA4beZdVanRmVUiJ2"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-md">
+<span class="material-symbols-outlined text-primary-fixed mb-xs">compost</span>
+<h3 class="text-white font-title-sm">Hortaliças Frescas</h3>
+<p class="text-white/80 font-label-sm">Alface, Tomates e Cenouras</p>
+</div>
+</div>
+<!-- Fruits -->
+<div class="relative overflow-hidden rounded-xl h-64 group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A close-up shot of various colorful fresh fruits like oranges, apples, and berries arranged neatly on a light surface. The lighting is high-key and clean, making the natural colors pop. The overall aesthetic is fresh, professional, and health-oriented, following a minimalist but organic design pattern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrcUSkf1MvBL2wd6NjEaL58_WNUp6UStUgmPoN5L8TNb51A3JVO_vpeR-87prJ7sC163uSFZCutDQjAA1Viodz0dvv3vnRoNrOF_OvZMZmFC_SR5M79eqLXfHRoO109XsWRUC6TGyDc61AXTwOadm_qQacfYaDqaLaInfHP6J0ZdiCWWCurJMyLUT9cUGTYLIvZfnY8bCO7sMvurWfLunQb0lAY5NJzySx8X4nFfjJ3-fVzs0XEWYb4m7Yo9kG6XILHJ9S91ksGE_X"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-md">
+<span class="material-symbols-outlined text-primary-fixed mb-xs">nutrition</span>
+<h3 class="text-white font-title-sm">Frutas da Estação</h3>
+<p class="text-white/80 font-label-sm">Colhidas com carinho</p>
+</div>
+</div>
+<!-- Sustainable Products -->
+<div class="relative overflow-hidden rounded-xl h-64 group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Sustainable agricultural products like honey jars and organic seeds presented in eco-friendly packaging on a clean white background. The composition uses soft shadows and generous whitespace, embodying a premium and fresh academic tool aesthetic. The mood is clear, accessible, and optimistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9gBktWfCblHehnT9fu9cvXqkH5B9HuL5iv6fFglx5Um8S8Uhv9n9o9Sprw-w7ee3SbE6kC_uABo9RWtBDs3xcA4k2mfkCf1R_-9H2ek-2ay682VKkYbBV9vPOqMUGZGPert7FuPIKvFnaSmlTBE5y4jpNM9jzey9n6B38OFc9Olqhct8YcJh-zS5kcy2_2qitfFkE_T0a6CQ3GvijGbtEqonzrRgGty4lrlSoGyRFFs2Bqp0db3ai4Y41HvZyhj16PdTzjB6mncxu"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-md">
+<span class="material-symbols-outlined text-primary-fixed mb-xs">grass</span>
+<h3 class="text-white font-title-sm">Produtos Agrícolas</h3>
+<p class="text-white/80 font-label-sm">Sustentabilidade pura</p>
+</div>
+</div>
+</div>
+</section>
+<!-- How it Works Section (Como Funciona?) -->
+<section class="py-xl bg-surface px-margin-mobile">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-xl scroll-reveal">
+<h2 class="font-headline-md-mobile text-headline-md-mobile mb-base md:font-headline-md md:text-headline-md">Como Funciona?</h2>
+<p class="font-body-md text-on-surface-variant">O ciclo do bem em 5 passos simples</p>
+</div>
+<div class="relative space-y-md scroll-reveal">
+<!-- Timeline line (desktop) -->
+<div class="absolute left-6 top-0 bottom-0 w-0.5 bg-primary-fixed hidden md:block"></div>
+<!-- Step 1 -->
+<div class="flex items-start gap-md group">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold z-10 group-hover:scale-110 transition-transform">1</div>
+<div class="pt-2">
+<h3 class="font-title-sm text-title-sm-mobile text-primary">Entrega</h3>
+<p class="text-on-surface-variant font-body-md">Traga seus itens para doação em nosso ponto de coleta comunitário.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start gap-md group">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold z-10 group-hover:scale-110 transition-transform">2</div>
+<div class="pt-2">
+<h3 class="font-title-sm text-title-sm-mobile text-primary">Avaliação</h3>
+<p class="text-on-surface-variant font-body-md">Nossa equipe verifica o estado de conservação dos objetos doados.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start gap-md group">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold z-10 group-hover:scale-110 transition-transform">3</div>
+<div class="pt-2">
+<h3 class="font-title-sm text-title-sm-mobile text-primary">Pontuação</h3>
+<p class="text-on-surface-variant font-body-md">Receba créditos digitais "Sementes" com base na sua contribuição.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex items-start gap-md group">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold z-10 group-hover:scale-110 transition-transform">4</div>
+<div class="pt-2">
+<h3 class="font-title-sm text-title-sm-mobile text-primary">Troca</h3>
+<p class="text-on-surface-variant font-body-md">Use suas "Sementes" para adquirir mudas, hortaliças ou produtos da terra.</p>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="flex items-start gap-md group">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold z-10 group-hover:scale-110 transition-transform">5</div>
+<div class="pt-2">
+<h3 class="font-title-sm text-title-sm-mobile text-primary">Destinação Social</h3>
+<p class="text-on-surface-variant font-body-md">Itens excedentes são doados para instituições parceiras da nossa rede.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission Section -->
+<section class="py-xl px-margin-mobile bg-primary text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl -mr-32 -mt-32"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10 scroll-reveal">
+<span class="material-symbols-outlined text-[48px] mb-md" style="font-variation-settings: 'FILL' 1;">nature_people</span>
+<h2 class="font-headline-md-mobile text-headline-md-mobile mb-md md:font-headline-md md:text-headline-md">Nossa Missão</h2>
+<p class="font-display-lg-mobile text-display-lg-mobile italic mb-lg md:font-display-lg md:text-display-lg">
+                    "Promover a sustentabilidade através do reuso e da conexão profunda entre a comunidade e o campo."
+                </p>
+<div class="flex justify-center gap-md">
+<div class="flex flex-col items-center">
+<span class="font-headline-md">500+</span>
+<span class="font-label-sm opacity-80">Mudas Plantadas</span>
+</div>
+<div class="w-px h-12 bg-white/20"></div>
+<div class="flex flex-col items-center">
+<span class="font-headline-md">1.2t</span>
+<span class="font-label-sm opacity-80">Reutilizados</span>
+</div>
+<div class="w-px h-12 bg-white/20"></div>
+<div class="flex flex-col items-center">
+<span class="font-headline-md">250+</span>
+<span class="font-label-sm opacity-80">Famílias Impactadas</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Shared Footer -->
+<footer class="w-full rounded-t-xl bg-surface-container-highest dark:bg-inverse-surface mt-xl">
+<div class="flex flex-col items-center gap-md py-lg px-margin-mobile w-full text-center max-w-7xl mx-auto">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" style="font-size: 32px;">eco</span>
+<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed">CEAK Verde</span>
+</div>
+<nav class="flex flex-wrap justify-center gap-md">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Privacy</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Contact</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Donate</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Volunteer</a>
+</nav>
+<div class="h-px w-full max-w-xs bg-outline-variant/30 my-base"></div>
+<p class="font-body-md text-body-md text-on-surface dark:text-inverse-on-surface opacity-80">
+                © 2024 CEAK Verde. Growing community stewardship.
+            </p>
+</div>
+</footer>
+<!-- Interactive Scripts -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Scroll Reveal Animation
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.scroll-reveal').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Smooth parallax effect for hero
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const heroImage = document.querySelector('section img');
+                if (heroImage) {
+                    heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+                }
+            });
+        });
+    </script>
+</body></html>
